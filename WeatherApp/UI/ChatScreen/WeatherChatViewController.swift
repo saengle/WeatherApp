@@ -10,6 +10,7 @@ import UIKit
 class WeatherChatViewController: UIViewController {
     
     let weatherChatView = WeatherChatView()
+    let apiManager = ApiManager()
     
     override func loadView() {
         view = weatherChatView
@@ -17,5 +18,6 @@ class WeatherChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        apiManager.callRequest(cor: 102)
     }
 }
