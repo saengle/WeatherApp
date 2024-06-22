@@ -18,6 +18,9 @@ class WeatherChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        apiManager.callRequest(cor: 102)
+        apiManager.callRequest(cor: 102) { weather in
+//            print(weather)
+            
+        }
     }
 }
