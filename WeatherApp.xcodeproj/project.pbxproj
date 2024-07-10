@@ -15,6 +15,8 @@
 		8E8D5DDC2C3EB99300CEBD92 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DDB2C3EB99300CEBD92 /* MainViewController.swift */; };
 		8E8D5DDE2C3EB9FF00CEBD92 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DDD2C3EB9FF00CEBD92 /* MainView.swift */; };
 		8E8D5DE12C3EBDD500CEBD92 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8E8D5DE02C3EBDD500CEBD92 /* SnapKit */; };
+		8E8D5DE42C3EC94800CEBD92 /* TVMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DE32C3EC94800CEBD92 /* TVMainCell.swift */; };
+		8E8D5DE72C3ECE8100CEBD92 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DE62C3ECE8100CEBD92 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		8E8D5DD72C3EB1F100CEBD92 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8E8D5DDB2C3EB99300CEBD92 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8E8D5DDD2C3EB9FF00CEBD92 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8E8D5DE32C3EC94800CEBD92 /* TVMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMainCell.swift; sourceTree = "<group>"; };
+		8E8D5DE62C3ECE8100CEBD92 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 		8E8D5DC22C3EB03400CEBD92 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				8E8D5DE52C3ECE7100CEBD92 /* Extension */,
 				8E8D5DD92C3EB91300CEBD92 /* UI */,
 				8E8D5DC32C3EB03400CEBD92 /* AppDelegate.swift */,
 				8E8D5DC52C3EB03400CEBD92 /* SceneDelegate.swift */,
@@ -82,10 +87,27 @@
 		8E8D5DDA2C3EB92000CEBD92 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8E8D5DE22C3EC89800CEBD92 /* Cell */,
 				8E8D5DDB2C3EB99300CEBD92 /* MainViewController.swift */,
 				8E8D5DDD2C3EB9FF00CEBD92 /* MainView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		8E8D5DE22C3EC89800CEBD92 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8E8D5DE32C3EC94800CEBD92 /* TVMainCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8E8D5DE52C3ECE7100CEBD92 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8E8D5DE62C3ECE8100CEBD92 /* UIView+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E8D5DE72C3ECE8100CEBD92 /* UIView+Extension.swift in Sources */,
 				8E8D5DC42C3EB03400CEBD92 /* AppDelegate.swift in Sources */,
 				8E8D5DDE2C3EB9FF00CEBD92 /* MainView.swift in Sources */,
 				8E8D5DC62C3EB03400CEBD92 /* SceneDelegate.swift in Sources */,
 				8E8D5DDC2C3EB99300CEBD92 /* MainViewController.swift in Sources */,
+				8E8D5DE42C3EC94800CEBD92 /* TVMainCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
