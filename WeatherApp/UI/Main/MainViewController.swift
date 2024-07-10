@@ -32,14 +32,14 @@ class MainViewController:  UIViewController {
         configureNav()
         configureVC()
     }
-    
-    
 }
+
 extension MainViewController {
     func configureVC() {
         mainView.mainTableView.delegate = self
         mainView.mainTableView.dataSource = self
         mainView.mainTableView.register(TVMainCell.self, forCellReuseIdentifier: TVMainCell.id)
+        mainView.mainTableView.register(TVMainHeader.self, forHeaderFooterViewReuseIdentifier: TVMainHeader.id)
     }
     private func configureNav() {
         navigationController?.isNavigationBarHidden = true
@@ -63,5 +63,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TVMainCell.id, for: indexPath) as? TVMainCell else { return UITableViewCell() }
         
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: TVMainHeader.id) as? TVMainHeader else {return UITableViewHeaderFooterView()}
+            return header
+        } else { return nil }
     }
 }
