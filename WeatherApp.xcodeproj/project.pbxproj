@@ -18,6 +18,8 @@
 		8E8D5DE42C3EC94800CEBD92 /* TVMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DE32C3EC94800CEBD92 /* TVMainCell.swift */; };
 		8E8D5DE72C3ECE8100CEBD92 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DE62C3ECE8100CEBD92 /* UIView+Extension.swift */; };
 		8E8D5DE92C3ED8CB00CEBD92 /* TVMainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DE82C3ED8CB00CEBD92 /* TVMainHeaderView.swift */; };
+		8E8D5DEC2C3F58E400CEBD92 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DEB2C3F58E400CEBD92 /* SearchViewController.swift */; };
+		8E8D5DEE2C3F590B00CEBD92 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DED2C3F590B00CEBD92 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		8E8D5DE32C3EC94800CEBD92 /* TVMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMainCell.swift; sourceTree = "<group>"; };
 		8E8D5DE62C3ECE8100CEBD92 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8E8D5DE82C3ED8CB00CEBD92 /* TVMainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMainHeaderView.swift; sourceTree = "<group>"; };
+		8E8D5DEB2C3F58E400CEBD92 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8E8D5DED2C3F590B00CEBD92 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		8E8D5DD92C3EB91300CEBD92 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8E8D5DEA2C3F58D300CEBD92 /* Search */,
 				8E8D5DDA2C3EB92000CEBD92 /* Main */,
 			);
 			path = UI;
@@ -111,6 +116,15 @@
 				8E8D5DE62C3ECE8100CEBD92 /* UIView+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		8E8D5DEA2C3F58D300CEBD92 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8E8D5DEB2C3F58E400CEBD92 /* SearchViewController.swift */,
+				8E8D5DED2C3F590B00CEBD92 /* SearchView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +205,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E8D5DE72C3ECE8100CEBD92 /* UIView+Extension.swift in Sources */,
+				8E8D5DEE2C3F590B00CEBD92 /* SearchView.swift in Sources */,
 				8E8D5DE92C3ED8CB00CEBD92 /* TVMainHeaderView.swift in Sources */,
+				8E8D5DEC2C3F58E400CEBD92 /* SearchViewController.swift in Sources */,
 				8E8D5DC42C3EB03400CEBD92 /* AppDelegate.swift in Sources */,
 				8E8D5DDE2C3EB9FF00CEBD92 /* MainView.swift in Sources */,
 				8E8D5DC62C3EB03400CEBD92 /* SceneDelegate.swift in Sources */,
