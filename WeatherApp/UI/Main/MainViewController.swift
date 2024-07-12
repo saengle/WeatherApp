@@ -11,14 +11,14 @@ class MainViewController:  UIViewController {
     
     let mainView = MainView()
     
-    lazy var newReminder = {
+    lazy var mapButton = {
         let item = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(tabbarButtonClicked(_:)))
         item.tag = 0
         item.tintColor = .black
         return item
     }()
     lazy var flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-    lazy var addList = {
+    lazy var searchButton = {
         let item = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(tabbarButtonClicked(_:)))
         item.tag = 1
         item.tintColor = .black
@@ -40,18 +40,33 @@ extension MainViewController {
         mainView.mainTableView.dataSource = self
         mainView.mainTableView.register(TVMainCell.self, forCellReuseIdentifier: TVMainCell.id)
         mainView.mainTableView.register(TVMainHeader.self, forHeaderFooterViewReuseIdentifier: TVMainHeader.id)
+        mainView.mainTableView.sectionHeaderHeight = UITableView.automaticDimension
     }
     private func configureNav() {
         navigationController?.isNavigationBarHidden = true
         navigationController?.isToolbarHidden = false
         var items = [UIBarButtonItem]()
         
-        [newReminder, flexibleSpace, addList].forEach {items.append($0)}
+        [mapButton, flexibleSpace, searchButton].forEach {items.append($0)}
         
         self.toolbarItems = items
     }
     
-    @objc private func tabbarButtonClicked(_ sender: UIBarButtonItem) {}
+    @objc private func tabbarButtonClicked(_ sender: UIBarButtonItem) {
+        switch sender.tag {
+        case 0:
+            print("Map Button Tapped")
+        case 1:
+            print("Search Button Tapped")
+            SearchButtonTapped()
+        default:
+            print("오류가 발생했습니다.")
+        }
+    }
+    private func SearchButtonTapped() {
+        let vc = SearchViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {

@@ -71,6 +71,7 @@
 		8E8D5DC22C3EB03400CEBD92 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				8EA724902C3FD7BC00E5B4ED /* Resource */,
 				8E8D5DE52C3ECE7100CEBD92 /* Extension */,
 				8E8D5DD92C3EB91300CEBD92 /* UI */,
 				8E8D5DC32C3EB03400CEBD92 /* AppDelegate.swift */,
@@ -125,6 +126,13 @@
 				8E8D5DED2C3F590B00CEBD92 /* SearchView.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		8EA724902C3FD7BC00E5B4ED /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

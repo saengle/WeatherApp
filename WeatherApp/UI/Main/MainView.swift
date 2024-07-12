@@ -33,7 +33,7 @@ class MainView: UIView {
     }
     private func configureLayout() {
         mainTableView.snp.makeConstraints { make in
-            make.edges.equalTo(self.safeAreaLayoutGuide)
+            make.edges.equalToSuperview()
         }
     }
     func configureView() {
