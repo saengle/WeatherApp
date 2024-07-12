@@ -14,14 +14,14 @@ class MainViewController:  UIViewController {
     lazy var mapButton = {
         let item = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(tabbarButtonClicked(_:)))
         item.tag = 0
-        item.tintColor = .black
+        item.tintColor = .white
         return item
     }()
     lazy var flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
     lazy var searchButton = {
         let item = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(tabbarButtonClicked(_:)))
         item.tag = 1
-        item.tintColor = .black
+        item.tintColor = .white
         return item
     }()
     
