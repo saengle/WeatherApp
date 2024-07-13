@@ -38,7 +38,7 @@ extension MainViewController {
     func configureVC() {
         mainView.mainTableView.delegate = self
         mainView.mainTableView.dataSource = self
-        mainView.mainTableView.register(TVMainCell.self, forCellReuseIdentifier: TVMainCell.id)
+        mainView.mainTableView.register(TVTitleCell.self, forCellReuseIdentifier: TVTitleCell.id)
         mainView.mainTableView.register(TVMainHeader.self, forHeaderFooterViewReuseIdentifier: TVMainHeader.id)
         mainView.mainTableView.sectionHeaderHeight = UITableView.automaticDimension
     }
@@ -75,7 +75,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TVMainCell.id, for: indexPath) as? TVMainCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TVTitleCell.id, for: indexPath) as? TVTitleCell else { return UITableViewCell() }
+        cell.configureCell(title: "3시간 간격의 일기예보", image: UIImage(systemName: "calendar")!, color: .white)
         
         return cell
     }

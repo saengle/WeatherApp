@@ -25,7 +25,10 @@ class SearchViewController: UIViewController {
         configureVC()
         configureNav()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
 }
 extension SearchViewController{
     private func configureVC() {
