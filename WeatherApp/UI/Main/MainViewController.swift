@@ -8,7 +8,9 @@
 import UIKit
 
 class MainViewController:  UIViewController {
+    
     let mainView = MainView()
+    let viewModel = MainViewModel()
     
     lazy var mapButton = {
         let item = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(tabbarButtonClicked(_:)))
@@ -30,10 +32,19 @@ class MainViewController:  UIViewController {
         super.viewDidLoad()
         configureNav()
         configureVC()
+        bindData()
     }
 }
 
 extension MainViewController {
+    func bindData() {
+        viewModel.outputWeather.bind { value in
+            print(value?.list?.count)
+            DispatchQueue.main.async {
+                self.mainView.mainTableView.reloadData()
+            }
+        }
+    }
     func configureVC() {
         mainView.mainTableView.delegate = self
         mainView.mainTableView.dataSource = self
@@ -86,6 +97,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             
             cell.horizontalCV.delegate = self
             cell.horizontalCV.dataSource = self
+            cell.horizontalCV.reloadData()
             return cell
         } else   {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TVDaysWeatherCell.id, for: indexPath) as? TVDaysWeatherCell else { return UITableViewCell() }
@@ -96,6 +108,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: TVMainHeader.id) as? TVMainHeader else {return UITableViewHeaderFooterView()}
+            if let name = viewModel.outputWeather.value?.city?.name,
+               let weather = viewModel.outputWeather.value?.list?.first {
+                header.configureHeader(city: name,  description: weather.weather!.description, temp: ((weather.main?.temp ?? 0) - 273.15).rounded() , min: ((weather.main?.tempMin ?? 0) - 273.15).rounded(), max: ((weather.main?.tempMax ?? 0) - 273.15).rounded())}
             return header
         } else { return nil }
     }
@@ -103,11 +118,32 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK:   CollectionView Setting
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return viewModel.outputWeather.value?.list?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HoursWeatherCollectionViewCell.id, for: indexPath) as? HoursWeatherCollectionViewCell else { return UICollectionViewCell() }
+        let data = self.viewModel.outputWeather.value?.list?[indexPath.item]
+        if let image = data?.weather?.first?.icon,
+           let temp = (data?.main?.temp),
+           let date = data?.dtTxt {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let convertDate = formatter.date(from: date)
+            let myDateFormatter = DateFormatter()
+            myDateFormatter.dateFormat = "HH시"
+            let convertStr = myDateFormatter.string(from: convertDate!)
+            cell.configureCell(time: convertStr, image: image, temp: Int(temp - 273.15))
+        }
+        
         return cell
     }
 }
+//let dateStr = "2020-08-13 16:30" // Date 형태의 String
+//        
+//let dateFormatter = DateFormatter()
+//dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" // 2020-08-13 16:30
+//        
+//let convertDate = dateFormatter.date(from: dateStr) // Date 타입으로 변환
+//        
+

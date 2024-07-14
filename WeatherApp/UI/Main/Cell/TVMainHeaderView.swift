@@ -9,43 +9,38 @@ import UIKit
 
 class TVMainHeader: UITableViewHeaderFooterView {
     
-    let mainStackView = {
+    private let mainStackView = {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.alignment = .center
         return sv
     }()
-    let locationMainLabel = {
+    private let locationMainLabel = {
         let lb = UILabel()
         lb.textColor = .white
-        lb.text = "My Location"
         lb.font = .systemFont(ofSize: 30)
         return lb
     }()
-    let locationSubLabel = {
+    private let locationSubLabel = {
         let lb = UILabel()
         lb.textColor = .white
-        lb.text = "서울특별시"
         lb.font = .systemFont(ofSize: 14)
         return lb
     }()
-    let temperatureLabel = {
+    private let temperatureLabel = {
         let lb = UILabel()
         lb.textColor = .white
-        lb.text = "30°"
         lb.font = .systemFont(ofSize: 100, weight: .thin)
         return lb
     }()
-    let descriptionLabel = {
+    private let descriptionLabel = {
         let lb = UILabel()
         lb.textColor = .white
-        lb.text = "Mostly Sunny"
         return lb
     }()
-    let minmaxTempLabel = {
+    private let minmaxTempLabel = {
         let lb = UILabel()
         lb.textColor = .white
-        lb.text = "H:30° L:20°"
         return lb
     }()
     override init(reuseIdentifier: String?) {
@@ -67,5 +62,10 @@ class TVMainHeader: UITableViewHeaderFooterView {
             make.edges.equalToSuperview()
         }
     }
-    func configureHeader() {}
+    func configureHeader(city: String, description: String, temp: Double, min: Double, max: Double) {
+        locationMainLabel.text = city
+        temperatureLabel.text = "\(temp)°"
+        descriptionLabel.text = description
+        minmaxTempLabel.text = "H:\(max)° L:\(min)°"
+    }
 }
