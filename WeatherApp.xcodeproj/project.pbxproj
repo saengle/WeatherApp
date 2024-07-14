@@ -27,6 +27,7 @@
 		8EA7249D2C43F41D00E5B4ED /* CityList.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EA7249C2C43F41D00E5B4ED /* CityList.json */; };
 		8EA724A12C43F50F00E5B4ED /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA724A02C43F50F00E5B4ED /* City.swift */; };
 		8EA724A32C43F68E00E5B4ED /* CityDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA724A22C43F68E00E5B4ED /* CityDataManager.swift */; };
+		8EA724A52C43FDEC00E5B4ED /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA724A42C43FDEC00E5B4ED /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		8EA7249C2C43F41D00E5B4ED /* CityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityList.json; sourceTree = "<group>"; };
 		8EA724A02C43F50F00E5B4ED /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		8EA724A22C43F68E00E5B4ED /* CityDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataManager.swift; sourceTree = "<group>"; };
+		8EA724A42C43FDEC00E5B4ED /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,9 +151,10 @@
 		8EA724902C3FD7BC00E5B4ED /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8EA724A62C43FE2F00E5B4ED /* Manager */,
 				8EA7249F2C43F4E600E5B4ED /* Model */,
 				8EA7249E2C43F4D300E5B4ED /* CityMock */,
-				8EA724A22C43F68E00E5B4ED /* CityDataManager.swift */,
+				8EA724A42C43FDEC00E5B4ED /* Observable.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -170,6 +173,14 @@
 				8EA724A02C43F50F00E5B4ED /* City.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8EA724A62C43FE2F00E5B4ED /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8EA724A22C43F68E00E5B4ED /* CityDataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EA724A52C43FDEC00E5B4ED /* Observable.swift in Sources */,
 				8EA724952C4392DC00E5B4ED /* TVHoursWeatherCell.swift in Sources */,
 				8EA724992C43E9E700E5B4ED /* TVDaysWeatherCell.swift in Sources */,
 				8E8D5DE72C3ECE8100CEBD92 /* UIView+Extension.swift in Sources */,

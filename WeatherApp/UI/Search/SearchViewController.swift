@@ -7,7 +7,9 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UISearchBarDelegate {
+    
+    let searchViewModel = SearchViewModel()
     
     let searchView = SearchView()
     override func loadView() {
@@ -24,6 +26,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         configureVC()
         configureNav()
+        bindData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,9 +34,15 @@ class SearchViewController: UIViewController {
     }
 }
 extension SearchViewController{
+    private func bindData() {
+        self.searchViewModel.outputCities.bind { value in
+            self.searchView.tableView.reloadData()
+        }
+    }
     private func configureVC() {
         searchView.tableView.delegate = self
         searchView.tableView.dataSource = self
+        searchView.searchBar.delegate = self
     }
     private func configureNav() {
         self.navigationController?.isNavigationBarHidden = false
@@ -42,19 +51,29 @@ extension SearchViewController{
         self.navigationItem.rightBarButtonItem = menuButton
     }
     @objc
-    private func menuButtonClicked(_ sender: UIBarButtonItem) {print("테스트")}
+    private func menuButtonClicked(_ sender: UIBarButtonItem) {
+        print("메뉴버튼 클릭됨")
+    }
+}
+
+extension SearchViewController {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let text = searchBar.text else { return }
+        searchViewModel.inputKeyword.value = text
+    }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.searchViewModel.outputCities.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data =  self.searchViewModel.outputCities.value[indexPath.row]
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: .none)
-        cell.textLabel?.text = "Seoul"
+        cell.textLabel?.text = data?.name
         cell.textLabel?.font = .boldSystemFont(ofSize: 17)
-        cell.detailTextLabel?.text = "KR"
+        cell.detailTextLabel?.text = data?.country.rawValue
         cell.detailTextLabel?.textColor = .systemGray
         cell.imageView?.image = UIImage(systemName: "number")
         cell.imageView?.tintColor = .white

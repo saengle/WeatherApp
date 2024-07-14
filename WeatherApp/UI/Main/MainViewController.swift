@@ -8,7 +8,6 @@
 import UIKit
 
 class MainViewController:  UIViewController {
-    
     let mainView = MainView()
     
     lazy var mapButton = {
@@ -38,9 +37,8 @@ extension MainViewController {
     func configureVC() {
         mainView.mainTableView.delegate = self
         mainView.mainTableView.dataSource = self
-        mainView.mainTableView.register(TVTitleCell.self, forCellReuseIdentifier: TVTitleCell.id)
-        mainView.mainTableView.register(TVMainHeader.self, forHeaderFooterViewReuseIdentifier: TVMainHeader.id)
         mainView.mainTableView.sectionHeaderHeight = UITableView.automaticDimension
+        mainView.mainTableView.rowHeight = UITableView.automaticDimension
     }
     private func configureNav() {
         navigationController?.isNavigationBarHidden = true
@@ -68,23 +66,48 @@ extension MainViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
+// MARK:  TableView Setting
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    // MARK:  섹션별 Row 수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 2
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TVTitleCell.id, for: indexPath) as? TVTitleCell else { return UITableViewCell() }
-        cell.configureCell(title: "3시간 간격의 일기예보", image: UIImage(systemName: "calendar")!, color: .white)
-        
-        return cell
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TVTitleCell.id, for: indexPath) as? TVTitleCell else { return UITableViewCell() }
+            cell.configureCell(title: " 3시간 간격의 일기예보", image: UIImage(systemName: "calendar")!, color: .white)
+            return cell
+        } else if indexPath == [0, 1] {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TVHoursWeatherCell.id, for: indexPath) as? TVHoursWeatherCell else { return UITableViewCell() }
+            
+            cell.horizontalCV.delegate = self
+            cell.horizontalCV.dataSource = self
+            return cell
+        } else   {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TVDaysWeatherCell.id, for: indexPath) as? TVDaysWeatherCell else { return UITableViewCell() }
+            return cell
+        }
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: TVMainHeader.id) as? TVMainHeader else {return UITableViewHeaderFooterView()}
             return header
         } else { return nil }
+    }
+}
+// MARK:   CollectionView Setting
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HoursWeatherCollectionViewCell.id, for: indexPath) as? HoursWeatherCollectionViewCell else { return UICollectionViewCell() }
+        return cell
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class TVTitleTCell : UITableViewCell {
+class TVTitleCell : UITableViewCell {
     
     let stview = {
         let st = UIStackView()
@@ -21,7 +21,7 @@ class TVTitleTCell : UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .blue
+        contentView.backgroundColor = .clear
         configureHierachy()
         configureLayout()
     }

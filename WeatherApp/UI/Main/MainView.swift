@@ -13,15 +13,20 @@ class MainView: UIView {
     
     let mainTableView = {
         let tb = UITableView(frame: .zero, style: .insetGrouped)
-        tb.backgroundColor = .lightGray
+        tb.backgroundColor = .clear
+        tb.backgroundView = nil
         return tb
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = .lightGray
         configureHierachy()
         configureLayout()
+        mainTableView.register(TVTitleCell.self, forCellReuseIdentifier: TVTitleCell.id)
+        mainTableView.register(TVMainHeader.self, forHeaderFooterViewReuseIdentifier: TVMainHeader.id)
+        mainTableView.register(TVHoursWeatherCell.self, forCellReuseIdentifier: TVHoursWeatherCell.id)
+        mainTableView.register(TVDaysWeatherCell.self, forCellReuseIdentifier: TVDaysWeatherCell.id)
     }
     
     required init?(coder: NSCoder) {
