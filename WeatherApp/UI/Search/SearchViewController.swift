@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Alamofire
+
 class SearchViewController: UIViewController, UISearchBarDelegate {
     
     let searchViewModel = SearchViewModel()
@@ -21,7 +23,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         item.tintColor = .white
         return item
     }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
@@ -78,5 +79,19 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
         cell.imageView?.image = UIImage(systemName: "number")
         cell.imageView?.tintColor = .white
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data =  self.searchViewModel.outputCities.value[indexPath.row]
+        if let lat = data?.coord.lat,
+           let lon = data?.coord.lon {
+            UserManager.lat = lat
+            UserManager.lon = lon
+        }
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        let vc = MainViewController()
+        let nvc = UINavigationController(rootViewController: vc)
+        sceneDelegate?.window?.rootViewController = nvc   // entrypoint
+        sceneDelegate?.window?.makeKeyAndVisible()  //show
     }
 }

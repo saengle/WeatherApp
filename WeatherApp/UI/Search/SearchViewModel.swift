@@ -26,6 +26,5 @@ class SearchViewModel {
     private func searchCity() {
          let text = inputKeyword
         outputCities.value =  cities.filter{$0.name.lowercased().contains((text.value?.lowercased() ?? ""))}.map{$0}
-        print(outputCities.value)
     }
 }
