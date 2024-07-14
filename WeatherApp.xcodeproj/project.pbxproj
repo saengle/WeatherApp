@@ -14,12 +14,19 @@
 		8E8D5DD82C3EB1F100CEBD92 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8E8D5DD72C3EB1F100CEBD92 /* .gitignore */; };
 		8E8D5DDC2C3EB99300CEBD92 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DDB2C3EB99300CEBD92 /* MainViewController.swift */; };
 		8E8D5DDE2C3EB9FF00CEBD92 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DDD2C3EB9FF00CEBD92 /* MainView.swift */; };
-		8E8D5DE12C3EBDD500CEBD92 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8E8D5DE02C3EBDD500CEBD92 /* SnapKit */; };
 		8E8D5DE42C3EC94800CEBD92 /* TVTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DE32C3EC94800CEBD92 /* TVTitleCell.swift */; };
 		8E8D5DE72C3ECE8100CEBD92 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DE62C3ECE8100CEBD92 /* UIView+Extension.swift */; };
 		8E8D5DE92C3ED8CB00CEBD92 /* TVMainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DE82C3ED8CB00CEBD92 /* TVMainHeaderView.swift */; };
 		8E8D5DEC2C3F58E400CEBD92 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DEB2C3F58E400CEBD92 /* SearchViewController.swift */; };
 		8E8D5DEE2C3F590B00CEBD92 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5DED2C3F590B00CEBD92 /* SearchView.swift */; };
+		8EA724932C42CE3C00E5B4ED /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8EA724922C42CE3C00E5B4ED /* SnapKit */; };
+		8EA724952C4392DC00E5B4ED /* TVHoursWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA724942C4392DC00E5B4ED /* TVHoursWeatherCell.swift */; };
+		8EA724972C43B0F700E5B4ED /* HoursWeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA724962C43B0F700E5B4ED /* HoursWeatherCollectionViewCell.swift */; };
+		8EA724992C43E9E700E5B4ED /* TVDaysWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA724982C43E9E700E5B4ED /* TVDaysWeatherCell.swift */; };
+		8EA7249B2C43F21F00E5B4ED /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA7249A2C43F21F00E5B4ED /* SearchViewModel.swift */; };
+		8EA7249D2C43F41D00E5B4ED /* CityList.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EA7249C2C43F41D00E5B4ED /* CityList.json */; };
+		8EA724A12C43F50F00E5B4ED /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA724A02C43F50F00E5B4ED /* City.swift */; };
+		8EA724A32C43F68E00E5B4ED /* CityDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA724A22C43F68E00E5B4ED /* CityDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +44,13 @@
 		8E8D5DE82C3ED8CB00CEBD92 /* TVMainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMainHeaderView.swift; sourceTree = "<group>"; };
 		8E8D5DEB2C3F58E400CEBD92 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8E8D5DED2C3F590B00CEBD92 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		8EA724942C4392DC00E5B4ED /* TVHoursWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVHoursWeatherCell.swift; sourceTree = "<group>"; };
+		8EA724962C43B0F700E5B4ED /* HoursWeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursWeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		8EA724982C43E9E700E5B4ED /* TVDaysWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDaysWeatherCell.swift; sourceTree = "<group>"; };
+		8EA7249A2C43F21F00E5B4ED /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		8EA7249C2C43F41D00E5B4ED /* CityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityList.json; sourceTree = "<group>"; };
+		8EA724A02C43F50F00E5B4ED /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		8EA724A22C43F68E00E5B4ED /* CityDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E8D5DE12C3EBDD500CEBD92 /* SnapKit in Frameworks */,
+				8EA724932C42CE3C00E5B4ED /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +121,9 @@
 			children = (
 				8E8D5DE32C3EC94800CEBD92 /* TVTitleCell.swift */,
 				8E8D5DE82C3ED8CB00CEBD92 /* TVMainHeaderView.swift */,
+				8EA724942C4392DC00E5B4ED /* TVHoursWeatherCell.swift */,
+				8EA724962C43B0F700E5B4ED /* HoursWeatherCollectionViewCell.swift */,
+				8EA724982C43E9E700E5B4ED /* TVDaysWeatherCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -124,6 +141,7 @@
 			children = (
 				8E8D5DEB2C3F58E400CEBD92 /* SearchViewController.swift */,
 				8E8D5DED2C3F590B00CEBD92 /* SearchView.swift */,
+				8EA7249A2C43F21F00E5B4ED /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -131,8 +149,27 @@
 		8EA724902C3FD7BC00E5B4ED /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8EA7249F2C43F4E600E5B4ED /* Model */,
+				8EA7249E2C43F4D300E5B4ED /* CityMock */,
+				8EA724A22C43F68E00E5B4ED /* CityDataManager.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		8EA7249E2C43F4D300E5B4ED /* CityMock */ = {
+			isa = PBXGroup;
+			children = (
+				8EA7249C2C43F41D00E5B4ED /* CityList.json */,
+			);
+			path = CityMock;
+			sourceTree = "<group>";
+		};
+		8EA7249F2C43F4E600E5B4ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8EA724A02C43F50F00E5B4ED /* City.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +189,7 @@
 			);
 			name = WeatherApp;
 			packageProductDependencies = (
-				8E8D5DE02C3EBDD500CEBD92 /* SnapKit */,
+				8EA724922C42CE3C00E5B4ED /* SnapKit */,
 			);
 			productName = WeatherApp;
 			productReference = 8E8D5DC02C3EB03400CEBD92 /* WeatherApp.app */;
@@ -183,7 +220,7 @@
 			);
 			mainGroup = 8E8D5DB72C3EB03400CEBD92;
 			packageReferences = (
-				8E8D5DDF2C3EBDD500CEBD92 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8EA724912C42CE3C00E5B4ED /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 8E8D5DC12C3EB03400CEBD92 /* Products */;
 			projectDirPath = "";
@@ -201,6 +238,7 @@
 			files = (
 				8E8D5DCD2C3EB03600CEBD92 /* Assets.xcassets in Resources */,
 				8E8D5DD82C3EB1F100CEBD92 /* .gitignore in Resources */,
+				8EA7249D2C43F41D00E5B4ED /* CityList.json in Resources */,
 				8E8D5DD02C3EB03600CEBD92 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,10 +250,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EA724952C4392DC00E5B4ED /* TVHoursWeatherCell.swift in Sources */,
+				8EA724992C43E9E700E5B4ED /* TVDaysWeatherCell.swift in Sources */,
 				8E8D5DE72C3ECE8100CEBD92 /* UIView+Extension.swift in Sources */,
 				8E8D5DEE2C3F590B00CEBD92 /* SearchView.swift in Sources */,
 				8E8D5DE92C3ED8CB00CEBD92 /* TVMainHeaderView.swift in Sources */,
+				8EA7249B2C43F21F00E5B4ED /* SearchViewModel.swift in Sources */,
+				8EA724A12C43F50F00E5B4ED /* City.swift in Sources */,
+				8EA724A32C43F68E00E5B4ED /* CityDataManager.swift in Sources */,
 				8E8D5DEC2C3F58E400CEBD92 /* SearchViewController.swift in Sources */,
+				8EA724972C43B0F700E5B4ED /* HoursWeatherCollectionViewCell.swift in Sources */,
 				8E8D5DC42C3EB03400CEBD92 /* AppDelegate.swift in Sources */,
 				8E8D5DDE2C3EB9FF00CEBD92 /* MainView.swift in Sources */,
 				8E8D5DC62C3EB03400CEBD92 /* SceneDelegate.swift in Sources */,
@@ -445,7 +489,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8E8D5DDF2C3EBDD500CEBD92 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		8EA724912C42CE3C00E5B4ED /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -456,9 +500,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8E8D5DE02C3EBDD500CEBD92 /* SnapKit */ = {
+		8EA724922C42CE3C00E5B4ED /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8E8D5DDF2C3EBDD500CEBD92 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 8EA724912C42CE3C00E5B4ED /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
